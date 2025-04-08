@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+                stages ('Deploy python') {
+                    steps {
+                        bat 'python product.py'
+                    }
+                }
+            
+                }
+            }
+        }
+    }
