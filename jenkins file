@@ -5,13 +5,13 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
-                stages ('Deploy python') {
-                    steps {
-                        bat 'python product.py'
-                    }
-                }
-            
-                }
+            }
+        }
+        
+        stage('Deploy Python') {
+            steps {
+                bat 'python product.py'
             }
         }
     }
+}
